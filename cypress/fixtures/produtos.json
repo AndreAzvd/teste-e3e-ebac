@@ -1,0 +1,29 @@
+[
+    {
+        "nomeProduto":"Ingrid Running Jacket",
+        "tamanho":"S",
+        "cor":"Red",
+        "quantidade": 1
+    },
+    
+    {
+        "nomeProduto":"Augusta Pullover Jacket",
+        "tamanho":"M",
+        "cor":"Red",
+        "quantidade": 2
+    },
+
+    {
+        "nomeProduto":"Josie Yoga Jacket",
+        "tamanho":"L",
+        "cor":"Blue",
+        "quantidade": 3
+    },
+
+    {
+        "nomeProduto":"Stellar Solar Jacket",
+        "tamanho":"S",
+        "cor":"Red",
+        "quantidade": 4
+    }
+]
