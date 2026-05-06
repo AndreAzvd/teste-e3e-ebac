@@ -13,10 +13,10 @@
     "mochawesome-merge": "^5.1.1"
   },
   "scripts": {
-    "clean:reports": "rm -rf cypress/reports && mkdir -p cypress/reports/mochareports",
+    "clean:reports": "node -e \"const fs = require('fs'); const path = 'cypress/reports'; fs.rmSync(path, { recursive: true, force: true }); fs.mkdirSync(path + '/mochareports', { recursive: true });\"",
     "pretest": "npm run clean:reports",
     "scripts": "npx cypress run",
-    "combine-reports": "if not exist cypress\\reports\\mochareports mkdir cypress\\reports\\mochareports && npx mochawesome-merge cypress/reports/mocha/*.json -o cypress/reports/mochareports/report.json",
+    "combine-reports": "node -e \"require('fs').mkdirSync('cypress/reports/mochareports', { recursive: true });\" && npx mochawesome-merge cypress/reports/mocha/*.json -o cypress/reports/mochareports/report.json",
     "generate-report": "npx marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "posttest": "npm run combine-reports && npm run generate-report"
   }
