@@ -11,12 +11,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        continue-on-error: true
-        with:
-          install-command: npm install
-          browser: electron
+      - name: Install dependencies
+        run: npm install
+      - name: Run pretest
+        run: npm run pretest
+      - name: Run tests
+        run: npm run scripts
+      - name: Run posttest
+        run: npm run posttest
       - name: Publish Report
         uses: peaceiris/actions-gh-pages@v3
         with:
