@@ -13,7 +13,7 @@
     "mochawesome-merge": "^5.1.1"
   },
   "scripts": {
-    "clean:reports": "if exist cypress\\reports rmdir /S /Q cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "clean:reports": "rm -rf cypress/reports && mkdir -p cypress/reports/mochareports",
     "pretest": "npm run clean:reports",
     "scripts": "npx cypress run",
     "combine-reports": "if not exist cypress\\reports\\mochareports mkdir cypress\\reports\\mochareports && npx mochawesome-merge cypress/reports/mocha/*.json -o cypress/reports/mochareports/report.json",
