@@ -15,7 +15,7 @@
   "scripts": {
     "clean:reports": "node -e \"const fs = require('fs'); const path = 'cypress/reports'; fs.rmSync(path, { recursive: true, force: true }); fs.mkdirSync(path + '/mochareports', { recursive: true });\"",
     "pretest": "npm run clean:reports",
-    "scripts": "npx cypress run",
+    "test": "npx cypress run",
     "combine-reports": "node -e \"require('fs').mkdirSync('cypress/reports/mochareports', { recursive: true });\" && npx mochawesome-merge cypress/reports/mocha/*.json -o cypress/reports/mochareports/report.json",
     "generate-report": "npx marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
     "posttest": "npm run combine-reports && npm run generate-report"

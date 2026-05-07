@@ -1,0 +1,146 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 1,
+    "failures": 0,
+    "start": "2026-05-07T22:15:50.277Z",
+    "end": "2026-05-07T22:16:03.702Z",
+    "duration": 13425,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 33.33333333333333,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9f139002-ac26-4c71-af87-584df6ec7499",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.js",
+      "file": "cypress\\e2e\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90dff662-cb2c-42c7-9a1e-9e75c5f052ef",
+          "title": "Funcionalidade Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login com sucesso usando Comando customizado",
+              "fullTitle": "Funcionalidade Login Login com sucesso usando Comando customizado",
+              "timedOut": null,
+              "duration": 7579,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login(dadosLogin.usuario, dadosLogin.senha);\ncy.get('.page-title').should('contain', 'Minha conta');",
+              "err": {},
+              "uuid": "022c307b-ec6a-4f39-86c4-8433681cdd96",
+              "parentUUID": "90dff662-cb2c-42c7-9a1e-9e75c5f052ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login usando fixture",
+              "fullTitle": "Funcionalidade Login Login usando fixture",
+              "timedOut": null,
+              "duration": 4466,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('perfil').then(dados => {\n  cy.login(dados.usuario, dados.senha);\n});\ncy.get('.page-title').should('contain', 'Minha conta');",
+              "err": {},
+              "uuid": "77e81640-2dfa-4860-9841-57322484bdfa",
+              "parentUUID": "90dff662-cb2c-42c7-9a1e-9e75c5f052ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Deve fazer login com sucesso - sem otimização",
+              "fullTitle": "Funcionalidade Login Deve fazer login com sucesso - sem otimização",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.get('#username').type(dadosLogin.usuario);\ncy.get('#password').type(dadosLogin.senha, {\n  log: false\n});\ncy.get('.woocommerce-form > .button').click();\ncy.get('.page-title').should('contain', 'Minha conta');\ncy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, aluno_ebac');",
+              "err": {},
+              "uuid": "ed11b3fa-fe18-45b8-8e3a-aa2590d45ce2",
+              "parentUUID": "90dff662-cb2c-42c7-9a1e-9e75c5f052ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "022c307b-ec6a-4f39-86c4-8433681cdd96",
+            "77e81640-2dfa-4860-9841-57322484bdfa"
+          ],
+          "failures": [],
+          "pending": [
+            "ed11b3fa-fe18-45b8-8e3a-aa2590d45ce2"
+          ],
+          "skipped": [],
+          "duration": 12045,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

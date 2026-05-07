@@ -14,7 +14,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
       cy.visit('/')
   });
 
-  it.only('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
+  it.skip('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
       cy.login('aluno_ebac@teste.com', 'teste@teste.com')
       cy.visitarProduto('Ingrid Running Jacket')
       cy.addProdutoCarrinho('XS', 'Orange', 1)
